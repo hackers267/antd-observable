@@ -1,5 +1,5 @@
 import { of, throwError } from "rxjs";
-import { pickData, toPage } from "./index";
+import { pickData, toDesc, toPage } from "./index";
 
 describe("pickData", function () {
   it("should be right", function () {
@@ -24,5 +24,23 @@ describe("toPage", function () {
     observable.pipe(toPage()).subscribe((x) => {
       expect(x).toStrictEqual({ total: 0, data: [], success: true });
     });
+  });
+});
+describe("toDesc", function () {
+  it("should be right", function (done) {
+    of({})
+      .pipe(toDesc())
+      .subscribe((x) => {
+        expect(x).toStrictEqual({ data: {}, success: true });
+        done();
+      });
+  });
+  it("with error", function (done) {
+    throwError(() => new Error())
+      .pipe(toDesc())
+      .subscribe((x) => {
+        expect(x).toStrictEqual({ data: undefined, success: true });
+        done();
+      });
   });
 });

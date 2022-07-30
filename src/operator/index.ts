@@ -18,3 +18,10 @@ export function toPage() {
 export function pickData() {
   return pipe(map<{ data?: any }, any>((x) => x?.data));
 }
+
+export function toDesc() {
+  return pipe(
+    map((desc) => ({ data: desc, success: true })),
+    catchError(() => of({ data: undefined, success: true }))
+  );
+}
