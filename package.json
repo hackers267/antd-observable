@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist types",
     "release": "standard-version",
     "test": "jest",
     "test:o": "jest -o"
