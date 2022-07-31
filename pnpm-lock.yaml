@@ -899,7 +899,7 @@ packages:
     dev: true
 
   /bser/2.1.1:
-    resolution: {integrity: sha1-5nh9og7OnQeZhTPP2d5vXDj0vAU=, tarball: bser/download/bser-2.1.1.tgz}
+    resolution: {integrity: sha1-5nh9og7OnQeZhTPP2d5vXDj0vAU=, tarball: bser/-/bser-2.1.1.tgz}
     dependencies:
       node-int64: 0.4.0
     dev: true
@@ -1012,7 +1012,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, tarball: concat-map/download/concat-map-0.0.1.tgz}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=, tarball: concat-map/-/concat-map-0.0.1.tgz}
     dev: true
 
   /concat-stream/2.0.0:
@@ -3034,7 +3034,7 @@ packages:
     dev: false
 
   /type-detect/4.0.8:
-    resolution: {integrity: sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=, tarball: type-detect/download/type-detect-4.0.8.tgz}
+    resolution: {integrity: sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=, tarball: type-detect/-/type-detect-4.0.8.tgz}
     engines: {node: '>=4'}
     dev: true
 
