@@ -7,7 +7,8 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "release": "standard-version",
-    "test": "jest"
+    "test": "jest",
+    "test:o": "jest -o"
   },
   "files": [
     "dist",

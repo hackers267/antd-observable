@@ -1,5 +1,5 @@
 import { of, throwError } from "rxjs";
-import { pickData, toDesc, toPage } from "./index";
+import { pickData, toDesc, toPage, toVirtualPage } from "./index";
 
 describe("pickData", function () {
   it("should be right", function () {
@@ -41,6 +41,27 @@ describe("toDesc", function () {
       .subscribe((x) => {
         expect(x).toStrictEqual({ data: undefined, success: true });
         done();
+      });
+  });
+});
+
+describe("toVirtualPage", function () {
+  it("should be right", function () {
+    of(["hello", "world"])
+      .pipe(toVirtualPage())
+      .subscribe((x) => {
+        expect(x).toStrictEqual({
+          success: true,
+          total: 2,
+          data: ["hello", "world"],
+        });
+      });
+  });
+  it("with error", function () {
+    throwError(() => new Error("Something wrong"))
+      .pipe(toVirtualPage())
+      .subscribe((x) => {
+        expect(x).toStrictEqual({ success: true, total: 0, data: [] });
       });
   });
 });
