@@ -783,7 +783,7 @@ packages:
     dev: true
 
   /@types/resolve/1.17.1:
-    resolution: {integrity: sha1-Ov1q2JZ8d+Q3bFmKgt3Vj0bsRdY=, tarball: '@types/resolve/-/@types/resolve-1.17.1.tgz'}
+    resolution: {integrity: sha1-Ov1q2JZ8d+Q3bFmKgt3Vj0bsRdY=, tarball: '@types/resolve/-/resolve-1.17.1.tgz'}
     dependencies:
       '@types/node': 18.6.2
     dev: true
