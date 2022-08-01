@@ -4,24 +4,27 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c rollup.config.js",
     "clean": "rimraf dist types",
     "release": "standard-version",
     "test": "jest",
     "test:o": "jest -o"
   },
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
     "@types/jest": "^28.1.6",
     "jest": "^28.1.3",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.77.2",
     "standard-version": "^9.5.0",
     "ts-jest": "^28.0.7",
     "typescript": "^4.7.4"
