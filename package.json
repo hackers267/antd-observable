@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "clean": "rimraf dist types",
+    "build": "npm run clean && rollup -c rollup.config.js",
+    "clean": "rimraf ./dist -rf",
     "release": "standard-version",
     "test": "jest",
     "test:o": "jest -o"
