@@ -2,7 +2,8 @@
   "name": "antd-observable",
   "version": "0.0.1",
   "description": "antd的observable实现",
-  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
   "scripts": {
     "build": "npm run clean && rollup -c rollup.config.js",
     "clean": "rimraf ./dist -rf",
