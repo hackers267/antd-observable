@@ -1,4 +1,4 @@
-import { catchError, map, of, pipe } from "rxjs";
+import { catchError, from, map, mergeMap, of, pipe, toArray } from "rxjs";
 
 type Page<T = any> = {
   list: T[];
@@ -35,4 +35,13 @@ export function toVirtualPage<T = any>() {
     }),
     catchError(() => of({ data: [], success: true, total: 0 }))
   );
+}
+
+export function toOption() {
+  return pipe(
+    mergeMap((x: string[]) => from(x).pipe(map(string2Option), toArray()))
+  );
+  function string2Option(x: string) {
+    return { value: x, label: x };
+  }
 }
