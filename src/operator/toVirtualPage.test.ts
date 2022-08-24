@@ -13,6 +13,17 @@ describe("toVirtualPage", function () {
         });
       });
   });
+  it("should undefined", function () {
+    of(undefined)
+      .pipe(toVirtualPage())
+      .subscribe((x) => {
+        expect(x).toStrictEqual({
+          success: true,
+          total: 0,
+          data: [],
+        });
+      });
+  });
   it("with error", function () {
     throwError(() => new Error("Something wrong"))
       .pipe(toVirtualPage())
