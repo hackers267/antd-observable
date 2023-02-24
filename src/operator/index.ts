@@ -1,11 +1,24 @@
-import { catchError, from, map, mergeMap, of, pipe, toArray } from "rxjs";
+import {
+  catchError,
+  from,
+  map,
+  mergeMap,
+  Observable,
+  of,
+  pipe,
+  toArray,
+  UnaryFunction,
+} from "rxjs";
+
+type PageResult<T> = { success: boolean; total: number; data: T[] };
 
 type Page<T = any> = {
   list: T[];
   total: number;
 };
 
-export function toPage() {
+type ToPage<T> = UnaryFunction<Observable<Page<T>>, Observable<PageResult<T>>>;
+export function toPage<T>(): ToPage<T> {
   return pipe(
     map((page: Page) => {
       const data = page.list;
@@ -15,18 +28,26 @@ export function toPage() {
     catchError(() => of({ success: true, total: 0, data: [] }))
   );
 }
-export function pickData() {
+
+type PickData = UnaryFunction<Observable<{ data?: any }>, Observable<any>>;
+export function pickData(): PickData {
   return pipe(map<{ data?: any }, any>((x) => x?.data));
 }
 
-export function toDesc() {
+type Desc<T> = { data?: T; success: boolean };
+type ToDesc<T> = UnaryFunction<Observable<T>, Observable<Desc<T>>>;
+export function toDesc<T>(): ToDesc<T> {
   return pipe(
-    map((desc) => ({ data: desc, success: true })),
+    map((desc: T) => ({ data: desc, success: true })),
     catchError(() => of({ data: undefined, success: true }))
   );
 }
 
-export function toVirtualPage<T = any>() {
+type ToVirtualPage<T> = UnaryFunction<
+  Observable<T[]>,
+  Observable<PageResult<T>>
+>;
+export function toVirtualPage<T = any>(): ToVirtualPage<T> {
   return pipe(
     map((list: T[]) => {
       const data = list ?? [];
@@ -37,7 +58,9 @@ export function toVirtualPage<T = any>() {
   );
 }
 
-export function toOption() {
+type Option = { value: string; label: string };
+type ToOption = UnaryFunction<Observable<string[]>, Observable<Option[]>>;
+export function toOption(): ToOption {
   return pipe(
     mergeMap((x: string[]) => from(x).pipe(map(string2Option), toArray()))
   );
