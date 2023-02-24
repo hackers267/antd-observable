@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/hackers267/antd-observable/compare/v0.0.3...v0.0.4) (2022-08-24)
+
+
+### Features
+
+* ✨️ 添加sum操作符 ([b50e3ad](https://github.com/hackers267/antd-observable/commit/b50e3ad08dad562e9d296773a5c99cab5170bfe8))
+
+### 0.0.3 (2022-08-10)
+
+
+### Features
+
+* ✨ 扩展toOption操作符，使之可以支持字符串参数和对象参数 ([8c016ba](https://github.com/hackers267/antd-observable/commit/8c016ba782504fb317c3239cb4e8494c6fac9a6a))
+
 ### [0.0.2](https://github.com/hackers267/antd-observable/compare/v0.0.1...v0.0.2) (2022-08-08)
 
 
