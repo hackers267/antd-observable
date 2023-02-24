@@ -1,6 +1,7 @@
 import { catchError, map, of, pipe } from "rxjs";
+import { ToVirtualPage } from "../types";
 
-export function toVirtualPage<T = any>() {
+export function toVirtualPage<T = any>(): ToVirtualPage<T> {
   return pipe(
     map((list?: T[]) => {
       const data = list ?? [];

@@ -1,7 +1,7 @@
 import { catchError, map, of, pipe } from "rxjs";
-import { Page } from "../types";
+import { Page, ToPage } from "../types";
 
-export function toPage() {
+export function toPage<T = any>(): ToPage<T> {
   return pipe(
     map((page: Page) => {
       const data = page.list;

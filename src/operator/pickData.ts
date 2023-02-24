@@ -1,5 +1,6 @@
 import { map, pipe } from "rxjs";
+import { PickData } from "../types";
 
-export function pickData() {
+export function pickData(): PickData {
   return pipe(map<{ data?: any }, any>((x) => x.data));
 }
