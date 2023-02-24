@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/hackers267/antd-observable/compare/v0.0.4...v0.0.5) (2023-02-24)
+
+
+### Features
+
+* ✨️ 添加sumBy操作符和测试用例 ([b6d002a](https://github.com/hackers267/antd-observable/commit/b6d002a38328713b7e6e0e95d2700e7151261696))
+
 ### [0.0.4](https://github.com/hackers267/antd-observable/compare/v0.0.3...v0.0.4) (2022-08-24)
 
 
