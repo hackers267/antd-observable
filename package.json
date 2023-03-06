@@ -5,11 +5,13 @@
   "module": "dist/esm/index.js",
   "main": "dist/cjs/index.js",
   "scripts": {
-    "build": "npm run clean && rollup -c rollup.config.js",
-    "clean": "rimraf ./dist -rf",
-    "release": "standard-version",
-    "test": "jest",
-    "test:o": "jest -o"
+    "api": "api-extractor run --local",
+    "package": "rollup -c rollup.config.ts --configPlugin typescript",
+    "build": "npm run clean && npm run test && npm run package && npm run api && npm run clean:type",
+    "clean": "rimraf dist coverage temp -rf",
+    "clean:type": "rimraf dist/operator dist/types dist/cjs dist/index.d.ts",
+    "release": "npm run build && standard-version",
+    "test": "jest"
   },
   "files": [
     "dist"
@@ -23,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.34.4",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
