@@ -9,6 +9,7 @@ export default defineConfig([
       format: "esm",
     },
     plugins: [typescript()],
+    external: ["rxjs"],
   },
   {
     input: "src/index.ts",
@@ -17,6 +18,7 @@ export default defineConfig([
       format: "commonjs",
     },
     plugins: [typescript()],
+    external: ["rxjs"],
   },
   {
     input: "src/index.ts",
@@ -25,9 +27,10 @@ export default defineConfig([
       format: "umd",
       name: "antd_observable",
       globals: {
-        name: "antd_observable",
+        rxjs: "rxjs",
       },
     },
     plugins: [typescript()],
+    external: ["rxjs"],
   },
 ]);
