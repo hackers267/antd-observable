@@ -1,8 +1,22 @@
 import { Option, ToOptionPipe } from "../types";
 import { from, map, mergeMap, pipe, toArray } from "rxjs";
 
+/**
+ * 转换为Option数据
+ * @public
+ */
 export function toOption(): ToOptionPipe<string>;
+/**
+ * 转换为Option数据
+ * @param field - 作为value和label的字段值
+ * @public
+ */
 export function toOption(field: string): ToOptionPipe;
+/**
+ * 转换为Option数据
+ * @param config - 指定value和label对应的字段
+ * @public
+ */
 export function toOption<T>(config: Option): ToOptionPipe<T>;
 export function toOption<T = any>(field?: string | Option) {
   if (typeof field === "string") {

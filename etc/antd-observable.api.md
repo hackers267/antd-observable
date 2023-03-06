@@ -8,47 +8,72 @@ import type { Observable } from 'rxjs';
 import type { ObservedValueOf } from 'rxjs';
 import type { OperatorFunction } from 'rxjs';
 
-// Warning: (ae-forgotten-export) The symbol "PickData" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
+type Option_2 = {
+    value: string;
+    label: string;
+};
+export { Option_2 as Option }
+
+// @public (undocumented)
+export type Page<T = any> = {
+    list: T[];
+    total: number;
+};
+
+// @public (undocumented)
+export type PickData<T = any> = OperatorFunction<{
+    data?: T;
+}, any>;
+
+// @public
 export function pickData(): PickData;
 
-// Warning: (ae-forgotten-export) The symbol "Sum" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
+export type Sum = OperatorFunction<number, number>;
+
+// @public
 export function sum(): Sum;
 
-// Warning: (ae-forgotten-export) The symbol "SumBy" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
+export type SumBy = OperatorFunction<Record<string, any>, number>;
+
+// @public
 export function sumBy(key: string): SumBy;
 
-// Warning: (ae-forgotten-export) The symbol "ToDesc" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
+export type ToDesc<T> = OperatorFunction<T, {
+    data?: T;
+    success: boolean;
+}>;
+
+// @public
 export function toDesc<T>(): ToDesc<T>;
 
-// Warning: (ae-forgotten-export) The symbol "ToOptionPipe" needs to be exported by the entry point index.d.ts
-//
-// @public (undocumented)
+// @public
 export function toOption(): ToOptionPipe<string>;
 
-// @public (undocumented)
+// @public
 export function toOption(field: string): ToOptionPipe;
 
-// Warning: (ae-forgotten-export) The symbol "Option_2" needs to be exported by the entry point index.d.ts
-//
-// @public (undocumented)
+// @public
 export function toOption<T>(config: Option_2): ToOptionPipe<T>;
 
-// Warning: (ae-forgotten-export) The symbol "ToPage" needs to be exported by the entry point index.d.ts
+// @public (undocumented)
+export type ToOptionPipe<T = any> = OperatorFunction<T[], ObservedValueOf<Observable<Option_2[]>>>;
+
+// Warning: (ae-forgotten-export) The symbol "PageResult" needs to be exported by the entry point index.d.ts
 //
 // @public (undocumented)
+export type ToPage<T> = OperatorFunction<Page<T>, PageResult<T>>;
+
+// @public
 export function toPage<T = any>(): ToPage<T>;
 
-// Warning: (ae-forgotten-export) The symbol "ToVirtualPage" needs to be exported by the entry point index.d.ts
-//
 // @public (undocumented)
+export type ToVirtualPage<T> = OperatorFunction<T[] | undefined, PageResult<T>>;
+
+// @public
 export function toVirtualPage<T = any>(): ToVirtualPage<T>;
 
 // (No @packageDocumentation comment for this package)

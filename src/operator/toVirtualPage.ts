@@ -1,6 +1,10 @@
 import { catchError, map, of, pipe } from "rxjs";
 import { ToVirtualPage } from "../types";
 
+/**
+ * 转换为自分页的Page数据
+ * @public
+ */
 export function toVirtualPage<T = any>(): ToVirtualPage<T> {
   return pipe(
     map((list?: T[]) => {
