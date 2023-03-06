@@ -2,8 +2,9 @@
   "name": "antd-observable",
   "version": "0.0.6",
   "description": "antd的observable实现",
-  "module": "dist/esm/index.js",
-  "main": "dist/cjs/index.js",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "typings": "dist/antd-observable.d.ts",
   "scripts": {
     "api": "api-extractor run --local",
     "package": "rollup -c rollup.config.ts --configPlugin typescript",
@@ -14,7 +15,10 @@
     "test": "jest"
   },
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/index.esm.js",
+    "dist/index.aio.js",
+    "dist/antd-observable.d.ts"
   ],
   "keywords": [
     "rxjs",
@@ -22,8 +26,11 @@
     "antd",
     "procomponent"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "silence_zhpf",
+    "email": "silence_zhpf@aliyun.com"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@microsoft/api-extractor": "^7.34.4",
     "@rollup/plugin-commonjs": "^22.0.1",
