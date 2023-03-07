@@ -31,6 +31,9 @@
     "name": "silence_zhpf",
     "email": "silence_zhpf@aliyun.com"
   },
+  "repository": {
+    "url": "https://github.com/hackers267/antd-observable.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@microsoft/api-documenter": "^7.21.5",
