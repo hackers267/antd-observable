@@ -11,7 +11,7 @@
     "build": "npm run clean && npm run test && npm run package && npm run api && npm run clean:type",
     "clean": "rimraf dist coverage temp -rf",
     "clean:type": "rimraf dist/operator dist/types dist/cjs dist/index.d.ts",
-    "doc": "api-documenter -i ./temp",
+    "doc": "api-documenter markdown -i ./temp",
     "release": "npm run build && standard-version",
     "test": "jest"
   },
