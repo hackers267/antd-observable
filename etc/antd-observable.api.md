@@ -23,11 +23,11 @@ export type Page<T = any> = {
 
 // @public (undocumented)
 export type PickData<T = any> = OperatorFunction<{
-    data?: T;
+    [props: string]: T;
 }, any>;
 
 // @public
-export function pickData(): PickData;
+export function pickData<T = any>(field?: string): PickData;
 
 // @public (undocumented)
 export type Sum = OperatorFunction<number, number>;

@@ -50,4 +50,4 @@ export type SumBy = OperatorFunction<Record<string, any>, number>;
 /**
  * @public
  */
-export type PickData<T = any> = OperatorFunction<{ data?: T }, any>;
+export type PickData<T = any> = OperatorFunction<{ [props: string]: T }, any>;
