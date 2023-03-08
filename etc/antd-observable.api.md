@@ -8,20 +8,20 @@ import type { Observable } from 'rxjs';
 import type { ObservedValueOf } from 'rxjs';
 import type { OperatorFunction } from 'rxjs';
 
-// @public (undocumented)
+// @public
 type Option_2 = {
     value: string;
     label: string;
 };
 export { Option_2 as Option }
 
-// @public (undocumented)
+// @public
 export type Page<T = any> = {
     list: T[];
     total: number;
 };
 
-// @public (undocumented)
+// @public
 export type PickData<T = any> = OperatorFunction<{
     [props: string]: T;
 }, any>;
@@ -29,19 +29,19 @@ export type PickData<T = any> = OperatorFunction<{
 // @public
 export function pickData<T = any>(field?: string): PickData;
 
-// @public (undocumented)
+// @public
 export type Sum = OperatorFunction<number, number>;
 
 // @public
 export function sum(): Sum;
 
-// @public (undocumented)
+// @public
 export type SumBy = OperatorFunction<Record<string, any>, number>;
 
 // @public
 export function sumBy(key: string): SumBy;
 
-// @public (undocumented)
+// @public
 export type ToDesc<T> = OperatorFunction<T, {
     data?: T;
     success: boolean;
@@ -59,18 +59,18 @@ export function toOption(field: string): ToOptionPipe;
 // @public
 export function toOption<T>(config: Option_2): ToOptionPipe<T>;
 
-// @public (undocumented)
+// @public
 export type ToOptionPipe<T = any> = OperatorFunction<T[], ObservedValueOf<Observable<Option_2[]>>>;
 
 // Warning: (ae-forgotten-export) The symbol "PageResult" needs to be exported by the entry point index.d.ts
 //
-// @public (undocumented)
+// @public
 export type ToPage<T> = OperatorFunction<Page<T>, PageResult<T>>;
 
 // @public
 export function toPage<T = any>(): ToPage<T>;
 
-// @public (undocumented)
+// @public
 export type ToVirtualPage<T> = OperatorFunction<T[] | undefined, PageResult<T>>;
 
 // @public
