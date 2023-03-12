@@ -1,5 +1,9 @@
 # antd-observable
 
+![](https://img.shields.io/npm/dm/antd-observable)
+![npm](https://img.shields.io/npm/v/antd-observable?color=green)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/hackers267/antd-observable?color=green&style=flat-square)
+
 为antd定制的observable库
 
 ## Observable
