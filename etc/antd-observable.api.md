@@ -22,6 +22,13 @@ export type Page<T = any> = {
 };
 
 // @public
+export type PageResult<T> = {
+    success: boolean;
+    data: T[];
+    total: number;
+};
+
+// @public
 export type PickData<T = any> = OperatorFunction<{
     [props: string]: T;
 }, any>;
@@ -62,8 +69,6 @@ export function toOption<T>(config: Option_2): ToOptionPipe<T>;
 // @public
 export type ToOptionPipe<T = any> = OperatorFunction<T[], ObservedValueOf<Observable<Option_2[]>>>;
 
-// Warning: (ae-forgotten-export) The symbol "PageResult" needs to be exported by the entry point index.d.ts
-//
 // @public
 export type ToPage<T> = OperatorFunction<Page<T>, PageResult<T>>;
 

@@ -29,7 +29,7 @@ export type Page<T = any> = {
  * Page的返回结果类型
  * @public
  */
-type PageResult<T> = { success: boolean; data: T[]; total: number };
+export type PageResult<T> = { success: boolean; data: T[]; total: number };
 
 /**
  * ToDesc函数的返回值类型
