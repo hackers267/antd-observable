@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/hackers267/antd-observable/compare/v0.0.7...v0.0.8) (2023-11-01)
+
+
+### Features
+
+* ✨ 为pickData添加参数 ([74d55f5](https://github.com/hackers267/antd-observable/commit/74d55f5e00a4dfb595de602b2c69f0fa19844fd7)), closes [#1](https://github.com/hackers267/antd-observable/issues/1)
+
 ### [0.0.7](https://github.com/hackers267/antd-observable/compare/v0.0.6...v0.0.7) (2023-03-07)
 
 ### [0.0.6](https://github.com/hackers267/antd-observable/compare/v0.0.5...v0.0.6) (2023-02-24)
