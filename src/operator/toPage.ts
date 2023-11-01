@@ -8,9 +8,8 @@ import { Page, ToPage } from "../types";
 export function toPage<T = any>(): ToPage<T> {
   return pipe(
     map((page: Page) => {
-      const data = page.list;
-      const total = page.total;
-      return { success: true, total, data };
+      const { list: data, total, ...rest } = page;
+      return { success: true, total, data, ...rest };
     }),
     catchError(() => of({ success: true, total: 0, data: [] }))
   );
