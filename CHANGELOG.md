@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/hackers267/antd-observable/compare/v0.0.8...v0.0.9) (2024-06-05)
+
+
+### Features
+
+* ✨ 添加download下载文件的操作符 ([a2a0986](https://github.com/hackers267/antd-observable/commit/a2a09864fec4934ec522ae546e52dbd14ec21917))
+
 ### [0.0.8](https://github.com/hackers267/antd-observable/compare/v0.0.7...v0.0.8) (2023-11-01)
 
 

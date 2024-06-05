@@ -1,6 +1,6 @@
 {
   "name": "antd-observable",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "antd的observable实现",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
