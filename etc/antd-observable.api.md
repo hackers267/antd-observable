@@ -9,6 +9,17 @@ import type { ObservedValueOf } from 'rxjs';
 import type { OperatorFunction } from 'rxjs';
 
 // @public
+export function download(opt: DownloadFileOpts): any;
+
+// @public
+export interface DownloadFileOpts {
+    cb?: (value: string) => void;
+    defaultFileName?: string;
+    fileName?: string;
+    fileType?: string[];
+}
+
+// @public
 type Option_2 = {
     value: string;
     label: string;
