@@ -23,6 +23,7 @@ export interface DownloadFileOpts {
 type Option_2 = {
     value: string;
     label: string;
+    [key: string]: any;
 };
 export { Option_2 as Option }
 
@@ -75,7 +76,7 @@ export function toOption(): ToOptionPipe<string>;
 export function toOption(field: string): ToOptionPipe;
 
 // @public
-export function toOption<T>(config: Option_2): ToOptionPipe<T>;
+export function toOption<T>(config: Option_2, persist?: boolean): ToOptionPipe<T>;
 
 // @public
 export type ToOptionPipe<T = any> = OperatorFunction<T[], ObservedValueOf<Observable<Option_2[]>>>;
