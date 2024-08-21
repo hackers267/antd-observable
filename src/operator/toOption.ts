@@ -15,10 +15,11 @@ export function toOption(field: string): ToOptionPipe;
 /**
  * 转换为Option数据
  * @param config - 指定value和label对应的字段
+ * @param persist - 是否保留原有字段
  * @public
  */
-export function toOption<T>(config: Option): ToOptionPipe<T>;
-export function toOption<T = any>(field?: string | Option) {
+export function toOption<T>(config: Option, persist?: boolean): ToOptionPipe<T>;
+export function toOption<T = any>(field?: string | Option, persist = false) {
   if (typeof field === "string") {
     return pipe(
       mergeMap((x: any[]) =>
@@ -33,10 +34,19 @@ export function toOption<T = any>(field?: string | Option) {
     return pipe(
       mergeMap((x: any[]) =>
         from(x).pipe(
-          map((item) => ({
-            value: item[field.value],
-            label: item[field.label],
-          })),
+          map((item) => {
+            if (persist) {
+              return ({
+                value: item[field.value],
+                label: item[field.label],
+                ...item
+              });
+            }
+            return ({
+              value: item[field.value],
+              label: item[field.label],
+            });
+          }),
           toArray()
         )
       )

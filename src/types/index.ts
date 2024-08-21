@@ -7,6 +7,7 @@ import type { Observable, ObservedValueOf, OperatorFunction } from "rxjs";
 export type Option = {
   value: string;
   label: string;
+  [key:string]: any
 };
 /**
  * ToOptionPipe类型

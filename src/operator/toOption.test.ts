@@ -1,8 +1,8 @@
 import { of } from "rxjs";
 import { toOption } from "./toOption";
 
-describe("toOption", function () {
-  it("should be right", function () {
+describe("toOption", function() {
+  it("should be right", function() {
     const strings = ["a", "b"];
     of(strings)
       .pipe(toOption())
@@ -14,7 +14,7 @@ describe("toOption", function () {
       });
   });
 
-  it("with string param", function () {
+  it("with string param", function() {
     const list = [{ name: "a" }, { name: "b" }];
     of(list)
       .pipe(toOption("name"))
@@ -26,7 +26,7 @@ describe("toOption", function () {
       });
   });
 
-  it("with object param", function () {
+  it("with object param", function() {
     const list = [
       { id: 1, name: "JS" },
       { id: 2, name: "Java" },
@@ -37,6 +37,20 @@ describe("toOption", function () {
         expect(x).toStrictEqual([
           { value: 1, label: "JS" },
           { value: 2, label: "Java" },
+        ]);
+      });
+  });
+  it("with object param with persist true", function() {
+    const list = [
+      { id: 1, name: "JS" },
+      { id: 2, name: "Java" },
+    ];
+    of(list)
+      .pipe(toOption({ value: "id", label: "name" }, true))
+      .subscribe((x) => {
+        expect(x).toStrictEqual([
+          { value: 1, label: "JS", id: 1, name: "JS" },
+          { value: 2, label: "Java", id: 2, name: "Java" },
         ]);
       });
   });
